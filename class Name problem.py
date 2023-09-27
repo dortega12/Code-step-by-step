@@ -14,7 +14,7 @@ class Name():
         return self.first_name + " " + self.middle_initial + ". " + self.last_name
         
 def main():
-    p1 = Name("Abigail", "R", "Hall")
+    p1 = Name("First", "M", "Last")
     
     print(p1.first_name)
     print(p1.middle_initial)
