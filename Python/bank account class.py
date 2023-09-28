@@ -1,30 +1,26 @@
 class BankAccount:
-    def __init__(self, name, balance):
+    def __init__(self, name, balance = 0.0):
         self.name = name
         self.balance = balance
-        
+
     def deposit(self, depo):
-        result = self.balance + depo
-        if result > 0:
-            self.balance = result
+        self.balance += depo
         return self.balance
-        
-    def withdraw(self, withdraw):
-        result = self.balance - withdraw
-        if result >= 0:
-            self.balance = result       
+
+    def withdraw(self, wdraw):
+        self.balance -= wdraw
         return self.balance
         
 def main():
     name = input("What is the name under your acount? ")
-    initial_balance = float(input("initial balance? "))
+    initial = float(input("How much money is in your bank account?"))
     
     depo = float(input("how much money would you like to deposit? "))
-    withdraw = float(input("how much would you like to withdraw? "))
-    ba = BankAccount(name, initial_balance)
+    wdraw = float(input("how much would you like to withdraw? "))
+    ba = BankAccount(name, initial)
     
     print(name)
     print(ba.deposit(depo))
-    print(ba.withdraw(withdraw))
+    print(ba.withdraw(wdraw))
     
 main()
